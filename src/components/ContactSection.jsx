@@ -28,45 +28,45 @@ export function ContactSection() {
   }
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20">
-      <div className="w-full max-w-6xl mx-auto px-4">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">{t('contactTitle')}</h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+    <section className="py-16 flex items-center justify-center py-16 px-4">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">{t('contactTitle')}</h2>
+          <p className="text-muted-foreground">
             {t('contactSubtitle')}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="space-y-4 sm:space-y-6">
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+          <div className="space-y-6">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Mail className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-sm sm:text-base font-semibold">{t('email')}</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground break-all">john.doe@example.com</p>
+                <h3 className="font-semibold">{t('email')}</h3>
+                <p className="text-muted-foreground">john.doe@example.com</p>
               </div>
             </div>
 
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Phone className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-sm sm:text-base font-semibold">{t('phone')}</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                <h3 className="font-semibold">{t('phone')}</h3>
+                <p className="text-muted-foreground">+1 (555) 123-4567</p>
               </div>
             </div>
 
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                <MapPin className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-sm sm:text-base font-semibold">{t('location')}</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground">San Francisco, CA</p>
+                <h3 className="font-semibold">{t('location')}</h3>
+                <p className="text-muted-foreground">San Francisco, CA</p>
               </div>
             </div>
           </div>
@@ -74,20 +74,13 @@ export function ContactSection() {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg sm:text-xl">{t('sendMessage')}</CardTitle>
-              <CardDescription className="text-sm">{t('contactSubtitle')}</CardDescription>
+              <CardTitle>{t('sendMessage')}</CardTitle>
+              <CardDescription>{t('contactSubtitle')}</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Input 
-                    name="name" 
-                    placeholder={t('namePlaceholder')} 
-                    value={formData.name} 
-                    onChange={handleChange} 
-                    required 
-                    className="text-sm sm:text-base"
-                  />
+                  <Input name="name" placeholder={t('namePlaceholder')} value={formData.name} onChange={handleChange} required />
                 </div>
                 <div>
                   <Input
@@ -97,7 +90,6 @@ export function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="text-sm sm:text-base"
                   />
                 </div>
                 <div>
@@ -106,13 +98,12 @@ export function ContactSection() {
                     placeholder={t('messagePlaceholder')}
                     value={formData.message}
                     onChange={handleChange}
-                    rows={3}
+                    rows={4}
                     required
-                    className="text-sm sm:text-base resize-none"
                   />
                 </div>
-                <Button type="submit" className="w-full text-sm sm:text-base">
-                  <Send className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                <Button type="submit" className="w-full">
+                  <Send className="w-4 h-4 mr-2" />
                   {t('sendMessage')}
                 </Button>
               </form>

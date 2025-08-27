@@ -28,23 +28,23 @@ export function Navbar() {
         isScrolled ? "backdrop-blur-md bg-background/80" : "bg-transparent"
       }`}
     >
-      <div className="w-full max-w-6xl mx-auto px-4 py-3 sm:py-4">
+      <div className="w-full max-w-2xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
-            <h1 className="text-lg sm:text-xl font-semibold text-foreground">
+            <h1 className="text-xl font-semibold text-foreground">
               {t('name')}
             </h1>
           </div>
 
-          <div className="flex items-center space-x-1 sm:space-x-2">
+          <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 sm:h-9 sm:w-9 hover:bg-accent transition-colors group relative"
+              className="h-9 w-9 hover:bg-accent transition-colors group relative"
               aria-label={t('projects')}
             >
-              <FolderOpen className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
+              <FolderOpen className="h-4 w-4" />
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
                 {t('projects')}
               </span>
             </Button>
@@ -52,11 +52,11 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 sm:h-9 sm:w-9 hover:bg-accent transition-colors group relative"
+              className="h-9 w-9 hover:bg-accent transition-colors group relative"
               aria-label={t('skills')}
             >
-              <User className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
+              <User className="h-4 w-4" />
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
                 {t('skills')}
               </span>
             </Button>
@@ -64,12 +64,12 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 sm:h-9 sm:w-9 hover:bg-accent transition-colors group relative"
+              className="h-9 w-9 hover:bg-accent transition-colors group relative"
               onClick={toggleLanguage}
               aria-label={t('translate')}
             >
-              <Languages className="h-3 w-3 sm:h-4 sm:w-4" />
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
+              <Languages className="h-4 w-4" />
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
                 {t('translate')}
               </span>
             </Button>
@@ -78,15 +78,15 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="h-8 w-8 sm:h-9 sm:w-9 hover:bg-accent transition-all duration-300 group relative"
+              className="h-9 w-9 hover:bg-accent transition-all duration-300 group relative"
               aria-label={t('theme')}
             >
               {theme === "dark" ? (
-                <Sun className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 rotate-0 scale-100" />
+                <Sun className="h-4 w-4 transition-transform duration-300 rotate-0 scale-100" />
               ) : (
-                <Moon className="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 rotate-0 scale-100" />
+                <Moon className="h-4 w-4 transition-transform duration-300 rotate-0 scale-100" />
               )}
-              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
                 {t('theme')}
               </span>
             </Button>

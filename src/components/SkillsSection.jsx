@@ -38,22 +38,22 @@ const skills = [
 export function SkillsSection() {
   const { t } = useTranslation()
   return (
-    <section className="py-12 sm:py-16 lg:py-20">
-      <div className="w-full max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">{t('skillsTitle')}</h2>
+    <section className="py-16 flex items-center justify-center py-16 px-4">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">{t('skillsTitle')}</h2>
 
-        <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
+        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-4">
           {skills.map((skill) => {
             const IconComponent = skill.icon
             return (
               <div
                 key={skill.name}
-                className="flex flex-col items-center p-3 sm:p-4 lg:p-6 rounded-lg border border-border bg-card hover:bg-accent transition-all duration-200 group hover:scale-105"
+                className="flex flex-col items-center p-4 rounded-lg border border-border bg-card hover:bg-accent transition-colors duration-200 group"
               >
                 <IconComponent
-                  className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 mb-2 sm:mb-3 ${skill.color} group-hover:scale-110 transition-transform duration-200`}
+                  className={`w-8 h-8 mb-2 ${skill.color} group-hover:scale-110 transition-transform duration-200`}
                 />
-                <span className="text-xs sm:text-sm lg:text-base font-medium text-foreground text-center leading-tight">{t(skill.name)}</span>
+                <span className="text-sm font-medium text-foreground text-center">{t(skill.name)}</span>
               </div>
             )
           })}
