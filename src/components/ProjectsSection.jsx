@@ -66,9 +66,9 @@ export default function ProjectsSection() {
   }, [api])
 
   return (
-    <section className="min-py-16 flex items-center justify-center py-16 px-4">
-      <div className="max-w-2xl mx-auto w-full">
-        <h2 className="text-3xl font-bold text-center mb-12">{t('projectsTitle')}</h2>
+    <section className="py-12 sm:py-16 lg:py-20 px-4">
+      <div className="max-w-6xl mx-auto w-full">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12">{t('projectsTitle')}</h2>
 
         <div className="relative">
           <Carousel
@@ -79,11 +79,11 @@ export default function ProjectsSection() {
               loop: true,
             }}
           >
-            <CarouselContent className="flex -ml-0 sm:-ml-2">
+            <CarouselContent className="flex -ml-2 sm:-ml-4">
               {projects.map((project) => (
                 <CarouselItem
                   key={project.id}
-                  className="basis-full sm:basis-1/2 pl-0 sm:pl-2"
+                  className="basis-full sm:basis-1/2 lg:basis-1/3 pl-2 sm:pl-4"
                 >
                   <ProjectCard project={project} />
                 </CarouselItem>
@@ -92,22 +92,22 @@ export default function ProjectsSection() {
           </Carousel>
 
           {/* controls */}
-          <div className="flex items-center justify-center gap-4 mt-6">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
             <Button
               variant="outline"
               size="icon"
-              className="h-8 w-8 bg-transparent"
+              className="h-8 w-8 sm:h-9 sm:w-9 bg-transparent"
               onClick={() => api && api.scrollPrev()}
               disabled={!api}
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
             </Button>
 
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 sm:gap-2">
               {Array.from({ length: count }).map((_, index) => (
                 <button
                   key={index}
-                  className={`w-2 h-2 rounded-full transition-colors ${
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors ${
                     index + 1 === current ? "bg-primary" : "bg-muted-foreground/30"
                   }`}
                   onClick={() => api && api.scrollTo(index)}
@@ -119,11 +119,11 @@ export default function ProjectsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="h-8 w-8 bg-transparent"
+              className="h-8 w-8 sm:h-9 sm:w-9 bg-transparent"
               onClick={() => api && api.scrollNext()}
               disabled={!api}
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
             </Button>
           </div>
         </div>
