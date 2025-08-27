@@ -1,0 +1,64 @@
+import {
+  SiPython,
+  SiJavascript,
+  SiDart,
+  SiReact,
+  SiFlutter,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiFastapi,
+  SiDjango,
+  SiFlask,
+  SiMysql,
+  SiMongodb,
+} from "react-icons/si"
+import { TbBrandReactNative } from "react-icons/tb"
+import { useTranslation } from "react-i18next"
+
+const skills = [
+  { name: "Python", icon: SiPython, color: "text-blue-500" },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
+  { name: "Dart", icon: SiDart, color: "text-blue-400" },
+  { name: "React", icon: SiReact, color: "text-cyan-500" },
+  { name: "Flutter", icon: SiFlutter, color: "text-blue-500" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-foreground" },
+  { name: "React Native", icon: TbBrandReactNative, color: "text-cyan-500" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+  { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
+  { name: "Express", icon: SiExpress, color: "text-foreground" },
+  { name: "FastAPI", icon: SiFastapi, color: "text-green-600" },
+  { name: "Django", icon: SiDjango, color: "text-green-700" },
+  { name: "Flask", icon: SiFlask, color: "text-foreground" },
+  { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+]
+
+export function SkillsSection() {
+  const { t } = useTranslation()
+  return (
+    <section className="py-16 flex items-center justify-center py-16 px-4">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">{t('skillsTitle')}</h2>
+
+        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-4">
+          {skills.map((skill) => {
+            const IconComponent = skill.icon
+            return (
+              <div
+                key={skill.name}
+                className="flex flex-col items-center p-4 rounded-lg border border-border bg-card hover:bg-accent transition-colors duration-200 group"
+              >
+                <IconComponent
+                  className={`w-8 h-8 mb-2 ${skill.color} group-hover:scale-110 transition-transform duration-200`}
+                />
+                <span className="text-sm font-medium text-foreground text-center">{t(skill.name)}</span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
