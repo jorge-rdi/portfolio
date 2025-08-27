@@ -6,8 +6,8 @@ export function HeroSection() {
   const { t } = useTranslation()
   
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 pt-20 pb-16">
-      <div className="max-w-6xl mx-auto w-full">
+    <section className="min-h-screen flex items-center justify-center pt-20 pb-16">
+      <div className="w-full max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         {/* Left side - Image and Dock */}
           <div className="flex flex-col space-y-6 items-center lg:items-start order-2 lg:order-1">

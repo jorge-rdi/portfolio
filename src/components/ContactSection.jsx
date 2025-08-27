@@ -28,8 +28,8 @@ export function ContactSection() {
   }
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-12 sm:py-16 lg:py-20">
+      <div className="w-full max-w-6xl mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">{t('contactTitle')}</h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">

@@ -38,11 +38,11 @@ const skills = [
 export function SkillsSection() {
   const { t } = useTranslation()
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-12 sm:py-16 lg:py-20">
+      <div className="w-full max-w-6xl mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12 text-foreground">{t('skillsTitle')}</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
+        <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
           {skills.map((skill) => {
             const IconComponent = skill.icon
             return (
